@@ -24,6 +24,16 @@ jobs:
       - name: Install dependencies
         run: npm install --force
 
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo VITE_APP_ID=${{ secrets.VITE_APP_ID }} >> .env
+          echo VITE_API_KEY=${{ secrets.VITE_API_KEY }} >> .env
+          echo VITE_EMAIL_KEY=${{ secrets.VITE_EMAIL_KEY }} >> .env
+          echo VITE_EMAIL_SERVICE_ID=${{ secrets.VITE_EMAIL_SERVICE_ID }} >> .env
+          echo VITE_EMAIL_TEMPLATE_ID=${{ secrets.VITE_EMAIL_TEMPLATE_ID }} >> .env
+          cat .env
+
       - name: Build project
         run: npm run build
 
