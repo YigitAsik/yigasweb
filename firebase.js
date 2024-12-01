@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: `${process.env.VITE_API_KEY}`,
+  apiKey: `${import.meta.env.VITE_API_KEY}`,
   authDomain: "yigasweb.firebaseapp.com",
   projectId: "yigasweb",
   storageBucket: "yigasweb.appspot.com",
   messagingSenderId: "34267813175",
-  appId: `${process.env.VITE_APP_ID}`
+  appId: `${import.meta.env.VITE_APP_ID}`
 };
 
 export const app = initializeApp(firebaseConfig);

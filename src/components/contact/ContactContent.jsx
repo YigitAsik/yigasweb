@@ -24,10 +24,10 @@ function ContactContent() {
 
     if (!emailSent && emailValidation()) {
       emailjs.sendForm(
-        `${process.env.VITE_EMAIL_SERVICE_ID}`,
-        `${process.env.VITE_EMAIL_TEMPLATE_ID}`,
+        `${import.meta.env.VITE_EMAIL_SERVICE_ID}`,
+        `${import.meta.env.VITE_EMAIL_TEMPLATE_ID}`,
         form.current,
-        `${process.env.VITE_EMAIL_KEY}`).then((result) => {
+        `${import.meta.env.VITE_EMAIL_KEY}`).then((result) => {
           console.log(`Email sent status: ${result.text}`);
 
           localStorage.setItem('email-sent', true);

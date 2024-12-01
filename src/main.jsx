@@ -6,14 +6,12 @@ import Admin from './routes/Admin';
 import Blog from './routes/Blog';
 import PostBlog from './routes/PostBlog';
 import BlogPostDetailPage from './components/blog/BlogPostDetailPage';
-import dotenv from "dotenv"
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
 
-dotenv.config();
 const router = createBrowserRouter([
   {
     path: "/",
